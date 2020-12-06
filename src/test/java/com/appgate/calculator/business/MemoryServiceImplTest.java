@@ -85,33 +85,33 @@ public class MemoryServiceImplTest {
 	@Test
 	public void testCalculateAddingShouldHaveGoodResult() throws InvalidOperationException {
 
-		Integer total = memory.calculate(SESSION_PLUS, "+");
+		ResponseOperation response = memory.calculate(SESSION_PLUS, "+");
 		
-		assertEquals(12, total, "Should have the same value");
+		assertEquals(12, response.getNumber(), "Should have the same value");
 	}
 	
 	@Test
 	public void testCalculateSubstractingShouldHaveGoodResult() throws InvalidOperationException {
 
-		Integer total = memory.calculate(SESSION_MINUS, "-");
+		ResponseOperation response = memory.calculate(SESSION_MINUS, "-");
 		
-		assertEquals(3, total, "Should have the same value");
+		assertEquals(3, response.getNumber(), "Should have the same value");
 	}
 	
 	@Test
 	public void testCalculateMultiplyingShouldHaveGoodResult() throws InvalidOperationException {
 
-		Integer total = memory.calculate(SESSION_MULTIPLY, "*");
+		ResponseOperation response = memory.calculate(SESSION_MULTIPLY, "*");
 		
-		assertEquals(25, total, "Should have the same value");
+		assertEquals(25, response.getNumber(), "Should have the same value");
 	}
 	
 	@Test
 	public void testCalculatePowerShouldHaveGoodResult() throws InvalidOperationException {
 
-		Integer total = memory.calculate(SESSION_POW, "^");
+		ResponseOperation response = memory.calculate(SESSION_POW, "^");
 		
-		assertEquals(16, total, "Should have the same value");
+		assertEquals(16, response.getNumber(), "Should have the same value");
 	}
 
 }
