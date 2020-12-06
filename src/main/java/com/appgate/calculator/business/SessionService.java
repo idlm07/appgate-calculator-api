@@ -1,8 +1,8 @@
 package com.appgate.calculator.business;
 
-import org.springframework.stereotype.Service;
+import com.appgate.calculator.business.domain.ResponseOperation;
 
-@Service
-public class SessionService {
+public interface SessionService {
 
+	public ResponseOperation newSession();
 }

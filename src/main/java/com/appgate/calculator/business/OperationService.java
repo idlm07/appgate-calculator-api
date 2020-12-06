@@ -1,8 +1,11 @@
 package com.appgate.calculator.business;
 
-import org.springframework.stereotype.Service;
+import com.appgate.calculator.business.domain.ResponseOperation;
 
-@Service
-public class OperationService {
+public interface OperationService {
+	
+	public ResponseOperation addNumber(String sessionId, Integer number);
+	
+	public ResponseOperation calculate(String sessionId, String operation);
 
 }

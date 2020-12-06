@@ -16,7 +16,20 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.projectlombok:lombok:1.16.16'
+	implementation 'org.apache.commons:commons-lang3:3.9'
+	
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'junit', module: 'junit'
+    }
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.4.2'
+    testImplementation 'org.mockito:mockito-core:2.21.0'
+	testImplementation 'org.mockito:mockito-junit-jupiter:2.23.0'
+	
+	annotationProcessor "org.projectlombok:lombok:1.16.16"
+	testAnnotationProcessor "org.projectlombok:lombok:1.16.16"
 	
 }
 
