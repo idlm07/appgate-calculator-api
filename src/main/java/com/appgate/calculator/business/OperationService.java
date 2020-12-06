@@ -6,6 +6,6 @@ public interface OperationService {
 	
 	public ResponseOperation addNumber(String sessionId, Integer number);
 	
-	public ResponseOperation calculate(String sessionId, String operation);
+	public ResponseOperation calculate(String sessionId, String operation, boolean continueResult);
 
 }

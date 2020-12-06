@@ -11,12 +11,15 @@ public interface MemoryService {
 	public ResponseOperation create(String sessionId);
 	
 	//Add number
-	public ResponseOperation add(String sessionId, Integer number) throws InvalidOperationException;
+	public ResponseOperation add(String sessionId, Integer number);
 
 	//Add number
-	public List<Integer> getAll(String sessionId) throws InvalidOperationException;
+	public List<Integer> getAll(String sessionId);
 	
 	//Calculate
-	public ResponseOperation calculate(String sessionId, String operation) throws InvalidOperationException;
+	public ResponseOperation calculate(String sessionId, String operation);
+	
+	//Reser memory
+	public ResponseOperation reset(String sessionId);
 
 }

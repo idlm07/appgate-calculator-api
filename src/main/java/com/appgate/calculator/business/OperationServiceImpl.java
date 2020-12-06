@@ -17,8 +17,19 @@ public class OperationServiceImpl implements OperationService{
 	}
 
 	@Override
-	public ResponseOperation calculate(String sessionId, String operation) {
-		return memory.calculate(sessionId, operation);
+	public ResponseOperation calculate(String sessionId, String operation, boolean continueResult) {
+		//Totalize
+		ResponseOperation response = memory.calculate(sessionId, operation);
+
+		//Reset memory
+		memory.reset(sessionId);
+		
+		if(continueResult) {
+			//add result to session memory
+			memory.add(sessionId, response.getNumber());
+		}
+		
+		return response;
 	}
 
 }

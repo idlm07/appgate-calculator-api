@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.appgate.calculator.business.SessionServiceImpl;
 import com.appgate.calculator.business.domain.ResponseOperation;
 
-@RestController(value = "appgate-calculator/session")
+@RestController(value = "/appgate-calculator/session")
 public class SessionController {
 	
 	@Autowired
@@ -19,7 +19,7 @@ public class SessionController {
 	 * 
 	 * @return
 	 */
-	@PostMapping
+	@PostMapping(path = "/new")
 	ResponseEntity<ResponseOperation> newSession(){
 		return new ResponseEntity<>(sessionService.newSession(), HttpStatus.OK);
 	}

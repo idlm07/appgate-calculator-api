@@ -25,8 +25,8 @@ public class MemoryServiceImpl implements MemoryService {
 		slots.put(sessionId, new ArrayList<>());
 
 		// Success response
-		return ResponseOperation.builder().status(true).message(Messages.MEMORY_SESSION_CREATED)
-				.sessionId(sessionId).build();
+		return ResponseOperation.builder().status(true).message(Messages.MEMORY_SESSION_CREATED).sessionId(sessionId)
+				.build();
 	}
 
 	@Override
@@ -61,10 +61,25 @@ public class MemoryServiceImpl implements MemoryService {
 
 		Integer total = totalize(sessionMemory, operation);
 
-		return ResponseOperation.builder().status(true).message("Totalized operation")
-				.sessionId(sessionId).number(total).build();
+		return ResponseOperation.builder().status(true).message("Totalized operation").sessionId(sessionId)
+				.number(total).build();
 	}
 
+	@Override
+	public ResponseOperation reset(String sessionId) {
+		
+		// Get Queue from session ID
+		List<Integer> sessionMemory = getAndVerifySession(sessionId);
+
+		// reset session If
+		sessionMemory.clear();
+
+		// Success response
+		return ResponseOperation.builder().status(true).message(Messages.MEMORY_SESSION_RESET)
+				.sessionId(sessionId)
+				.build();
+	}
+	
 	/**
 	 * Totalize stack numbers.
 	 * 
@@ -80,31 +95,31 @@ public class MemoryServiceImpl implements MemoryService {
 		case "+":
 			total = sessionMemorySlot.stream().reduce(0, Math::addExact);
 			break;
-			
+
 		case "-":
 			if (Objects.nonNull(sessionMemorySlot) && !sessionMemorySlot.isEmpty()) {
 				total = sessionMemorySlot.get(0);
 				sessionMemorySlot.remove(0);
-				for(Integer i : sessionMemorySlot) {
+				for (Integer i : sessionMemorySlot) {
 					total -= i;
 				}
 			}
 			break;
-			
+
 		case "*":
 			total = sessionMemorySlot.stream().reduce(1, Math::multiplyExact);
 			break;
-			
+
 		case "^":
 			if (Objects.nonNull(sessionMemorySlot) && !sessionMemorySlot.isEmpty()) {
 				total = sessionMemorySlot.get(0);
 				sessionMemorySlot.remove(0);
-				for(Integer i : sessionMemorySlot) {
+				for (Integer i : sessionMemorySlot) {
 					total = Double.valueOf(Math.pow(total, i)).intValue();
 				}
 			}
 			break;
-			
+
 		default:
 			break;
 		}

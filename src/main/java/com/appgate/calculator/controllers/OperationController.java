@@ -28,8 +28,8 @@ public class OperationController {
 	 * 
 	 * @return
 	 */
-	@PostMapping
-	ResponseEntity<ResponseOperation> calculate(String sessionId, String operation){
-		return new ResponseEntity<>(sessionService.calculate(sessionId, operation), HttpStatus.OK);
+	@PostMapping(path = "/calculate")
+	ResponseEntity<ResponseOperation> calculate(String sessionId, String operation, boolean continueResult){
+		return new ResponseEntity<>(sessionService.calculate(sessionId, operation, continueResult), HttpStatus.OK);
 	}
 }

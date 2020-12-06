@@ -26,8 +26,4 @@ public final class SessionGenerator {
 		
 		return sessionId.toString();
 	}
-	
-	public static void main(String[] args) throws NoSuchAlgorithmException {
-		System.out.println(SessionGenerator.newSession());
-	}
 }
