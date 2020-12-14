@@ -1,10 +1,10 @@
 package com.appgate.calculator.business;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 import org.springframework.context.annotation.Primary;
@@ -18,13 +18,14 @@ import com.appgate.calculator.util.Messages;
 @Primary
 public class MemoryServiceImpl implements MemoryService {
 
+	//slot concurrent for thread safety
 	private Map<String, List<Integer>> slots;
 
 	/**
 	 * Constructor
 	 */
 	MemoryServiceImpl(){
-		slots = new HashMap<>();
+		slots = new ConcurrentHashMap<>();
 	}
 	
 	@Override
