@@ -1,12 +1,13 @@
 package com.appgate.calculator.business;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.appgate.calculator.business.domain.ResponseOperation;
@@ -14,15 +15,26 @@ import com.appgate.calculator.exceptions.InvalidOperationException;
 import com.appgate.calculator.util.Messages;
 
 @Service
+@Primary
 public class MemoryServiceImpl implements MemoryService {
 
-	private Map<String, List<Integer>> slots = new ConcurrentHashMap<>();
+	private Map<String, List<Integer>> slots;
+	
 
+	/**
+	 * Constructor
+	 */
+	MemoryServiceImpl(){
+		slots = new HashMap<>();
+	}
+	
 	@Override
 	public ResponseOperation create(String sessionId) {
 
 		// Create sessionId stack
 		slots.put(sessionId, new ArrayList<>());
+		
+		
 
 		// Success response
 		return ResponseOperation.builder().status(true).message(Messages.MEMORY_SESSION_CREATED).sessionId(sessionId)
