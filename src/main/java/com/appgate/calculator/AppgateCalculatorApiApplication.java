@@ -1,31 +1,17 @@
 package com.appgate.calculator;
 
-import java.util.Arrays;
-
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
+@EnableSwagger2
+ 
 public class AppgateCalculatorApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AppgateCalculatorApiApplication.class, args);
 	}
-
-//	@Bean
-//	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-//		return args -> {
-//			System.out.println("Let's inspect the beans provided by Spring Boot:");
-//
-//			String[] beanNames = ctx.getBeanDefinitionNames();
-//			Arrays.sort(beanNames);
-//			for (String bean : beanNames) {
-//				System.out.println(bean);
-//			}
-//		};
-//	}
 
 }
