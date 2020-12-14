@@ -13,8 +13,11 @@ import com.appgate.calculator.business.domain.AddNumberRequest;
 import com.appgate.calculator.business.domain.CalculateRequest;
 import com.appgate.calculator.business.domain.ResponseOperation;
 
+import io.swagger.annotations.Api;
+
 @RestController
 @RequestMapping(path = "operations")
+@Api(value = "Operation Controller", tags = {"calculator-operation-controller"}, description = "Operations over calculator")
 public class OperationController {
 
 	@Autowired

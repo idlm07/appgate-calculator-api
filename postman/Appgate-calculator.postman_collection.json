@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "f5b3af71-5584-4e0f-bcc9-69fd721662cc",
+		"name": "Appgate-calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "session",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1114cdcd-2620-4755-a6ae-f2b360ae7157",
+						"exec": [
+							"pm.test(\"Test setting\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.environment.set(\"sessionId\", jsonData.sessionId);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appgate-calculator-api/sessions/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appgate-calculator-api",
+						"sessions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNumber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sessionId\" : {{sessionId}},\n    \"number\"    : 7\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appgate-calculator-api/operations/number",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appgate-calculator-api",
+						"operations",
+						"number"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sessionId\" : {{sessionId}},\n    \"operation\"    : \"+\",\n    \"continueResult\" : true \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appgate-calculator-api/operations/calculate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appgate-calculator-api",
+						"operations",
+						"calculate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

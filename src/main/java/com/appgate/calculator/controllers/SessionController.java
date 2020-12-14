@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.appgate.calculator.business.SessionService;
 import com.appgate.calculator.business.domain.ResponseOperation;
 
+import io.swagger.annotations.Api;
+
 @RestController
 @RequestMapping(path = "sessions")
+@Api(value = "Session Controller", tags = {"calculator-session-controller"}, description = "Session for calculator")
 public class SessionController {
 	
 	@Autowired
