@@ -19,7 +19,6 @@ import com.appgate.calculator.util.Messages;
 public class MemoryServiceImpl implements MemoryService {
 
 	private Map<String, List<Integer>> slots;
-	
 
 	/**
 	 * Constructor
@@ -34,8 +33,6 @@ public class MemoryServiceImpl implements MemoryService {
 		// Create sessionId stack
 		slots.put(sessionId, new ArrayList<>());
 		
-		
-
 		// Success response
 		return ResponseOperation.builder().status(true).message(Messages.MEMORY_SESSION_CREATED).sessionId(sessionId)
 				.build();

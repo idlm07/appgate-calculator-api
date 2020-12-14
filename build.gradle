@@ -13,8 +13,9 @@ repositories {
 }
 
 dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.2'
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.projectlombok:lombok:1.16.16'
 	implementation 'org.apache.commons:commons-lang3:3.9'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	
@@ -27,8 +28,8 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:2.21.0'
 	testImplementation 'org.mockito:mockito-junit-jupiter:2.23.0'
 	
-	annotationProcessor "org.projectlombok:lombok:1.16.16"
-	testAnnotationProcessor "org.projectlombok:lombok:1.16.16"
+	annotationProcessor "org.projectlombok:lombok:1.18.2"
+	testAnnotationProcessor "org.projectlombok:lombok:1.18.2"
 	
 }
 
