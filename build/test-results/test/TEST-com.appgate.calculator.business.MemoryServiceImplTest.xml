@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.appgate.calculator.business.MemoryServiceImplTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2020-12-14T01:20:11" hostname="MacBook-Pro-de-Apple.local" time="0.742">
+  <properties/>
+  <testcase name="testCalculatePowerShouldHaveGoodResult()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.707"/>
+  <testcase name="testCalculateSubstractingShouldHaveGoodResult()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.003"/>
+  <testcase name="testAddShouldBeSuccess()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.005"/>
+  <testcase name="testAddAndGetAllShouldHaveSamesValues()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.003"/>
+  <testcase name="testCalculateMultiplyingShouldHaveGoodResult()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.004"/>
+  <testcase name="testCalculateAddingShouldHaveGoodResult()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.008"/>
+  <testcase name="testCreateShouldBeSuccess()" classname="com.appgate.calculator.business.MemoryServiceImplTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,4 @@
+com/appgate/calculator/business/MemoryServiceImplTest.java
+ com.appgate.calculator.business.MemoryServiceImplTest
+com/appgate/calculator/AppgateCalculatorApiApplicationTests.java
+ com.appgate.calculator.AppgateCalculatorApiApplicationTests
