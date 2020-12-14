@@ -53,7 +53,7 @@ public class OperationServiceImpl implements OperationService{
 			memory.add(sessionId, response.getNumber());
 			
 			//log handler
-			logHandler.info("Result Added.");
+			logHandler.info("Result Added to memory.");
 		}
 		
 		return response;
